@@ -14,7 +14,7 @@ export class AppComponent {
       authDomain: "bookcatalog-1473e.firebaseapp.com",
       databaseURL: "https://bookcatalog-1473e.firebaseio.com",
       projectId: "bookcatalog-1473e",
-      storageBucket: "",
+      storageBucket: "gs://bookcatalog-1473e.appspot.com",
       messagingSenderId: "596588004159",
       appId: "1:596588004159:web:4cab6e426b225772"
     };

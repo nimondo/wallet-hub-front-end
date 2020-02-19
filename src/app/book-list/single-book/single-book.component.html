@@ -1,3 +1,25 @@
-<p>
-  single-book works!
-</p>
+<div class="container">
+  <div class="row marg">
+    <div class="offset-2 col-8 single-content">
+      
+      <p class="mb-5">
+        <img style="max-width:400px;" *ngIf="book.photo" [src]="book.photo" alt="Image" class="img-fluid">
+      </p>  
+      <h1 class="mb-4">
+        {{ book.title }}
+      </h1>
+      <div class="post-meta d-flex mb-5">
+        <div class="bio-pic mr-3">
+  
+        <div class="vcard">
+          <span class="d-block"><a href="#">{{ book.author}}</a></span>
+        </div>
+      </div>
+      <p>{{ book.synopsis }}</p>
+       <div class="pt-5">
+        <button class="btn btn-default" (click)="onBack()">Back</button>
+        <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+            </div>      
+    </div>
+  </div>  
+</div>

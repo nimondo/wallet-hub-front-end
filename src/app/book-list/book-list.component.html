@@ -1,3 +1,17 @@
-<p>
-  book-list works!
-</p>
+
+<div class="offset-2 col-md-8 col-xs-8 marg">
+  <h2>Yours books</h2>
+  <div class="post-entry-2 d-flex bg-light"
+  *ngFor="let book of books; let i = index"
+  (click)="onViewBook(i)">
+    <div class="thumbnail" [ngStyle]="{'background-image':'url(' + book.photo + ')'}"></div>
+    <div class="contents">
+      <h2> {{ book.title }}</h2>
+      <div class="post-meta">
+        <span class="d-block"><a href="#">{{ book.author }}</a></span>
+        <span class="date-read">By Wallet Hub </span>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onNewBook()">New book</button>
+</div>
