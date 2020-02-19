@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "wallet-hub"
+  "defaultProject": "wallet-hub",
+  "cli": {
+    "analytics": "bd44a03e-96ab-42e3-bc93-2d210c79daae"
+  }
 }

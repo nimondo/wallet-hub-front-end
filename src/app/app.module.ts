@@ -14,9 +14,16 @@ import { SingleBookComponent } from './book-list/single-book/single-book.compone
 import { BookFormComponent } from './book-list/book-form/book-form.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuardService} from './services/auth-guard.service';
+import { ContactModule } from './general/contact/contact.module';
+import { CustomersModule } from './customers/customers.module';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
+  {
+    path: 'about',
+    loadChildren: () => import('./general/about/about.module')
+      .then(mod => mod.AboutModule)
+  },
   { path: 'auth/signin', component: SigninComponent },
   { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
   { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
@@ -39,7 +46,9 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ContactModule,
+    CustomersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
