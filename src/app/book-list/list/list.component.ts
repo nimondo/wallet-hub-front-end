@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit,Input,OnChanges} from '@angular/core';
 import { Book } from '../../models/book';
 
 @Component({
@@ -6,10 +6,16 @@ import { Book } from '../../models/book';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit,OnChanges {
   @Input() book: Book;
   
   constructor() { }
+  ngOnChanges() {
+    this.doSomething(this.book);
+  }
+  private doSomething(bk: Book) {
+    alert(bk.title)
+  }
 
   ngOnInit(): void {
   }

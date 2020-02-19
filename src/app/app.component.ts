@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import * as firebase from 'firebase/app';
+import { slideInAnimation } from './animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    slideInAnimation
+    // animation triggers go here
+  ]
 })
 export class AppComponent {
   title = 'wallet-hub';
+  
   constructor() {
     const config = {
       apiKey: "AIzaSyAoDQnyhe53BK2A_x1ZNmMts80qDH9A3GI",

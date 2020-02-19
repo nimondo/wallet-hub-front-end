@@ -1,5 +1,6 @@
 <app-header></app-header>
-<div class="site-section py-0">
-  <router-outlet></router-outlet>
+<div class="site-section py-0" [@routeAnimations]="o && o.activatedRouteData 
+&& o.activatedRouteData['animation']">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
 

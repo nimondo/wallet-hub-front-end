@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  price;
   isAuth: boolean;
   constructor(private authService: AuthService,private router: Router) { }
 
@@ -24,7 +24,9 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
-
+  updatePrice(newNumber: number): void {
+    this.price = newNumber;
+  }
   onSignOut() {
     this.authService.signOutUser();
   }

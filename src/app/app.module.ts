@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule,Routes,ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot,Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { CustomersModule } from './customers/customers.module';
 import { SearchComponent } from './book-list/search/search.component';
 import { ListComponent } from './book-list/list/list.component';
 import { RateComponent } from './book-list/rate/rate.component';
+import { AddBtnComponent } from './book-list/add-btn/add-btn.component';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -28,7 +30,7 @@ const appRoutes: Routes = [
       .then(mod => mod.AboutModule)
   },
   { path: 'auth/signin', component: SigninComponent },
-  { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
+  { path: 'books', canActivate: [AuthGuardService], component: BookListComponent , data: {animation: 'FilterPage'} },
   { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
   // { path: 'books/search', canActivate: [AuthGuardService], component: SearchComponent },
   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
@@ -46,13 +48,15 @@ const appRoutes: Routes = [
     HeaderComponent,
     SearchComponent,
     ListComponent,
-    RateComponent
+    RateComponent,
+    AddBtnComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule, 
     RouterModule.forRoot(appRoutes),
     ContactModule,
     CustomersModule

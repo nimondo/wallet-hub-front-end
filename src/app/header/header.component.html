@@ -32,7 +32,11 @@
           <form action="#" class="search-form d-inline-block">
 
             <div class="d-flex">
-              <input type="email" class="form-control" placeholder="Search...">
+              {{ price | currency : 'USD' : true : '1.2-2' }}
+              <input type="text"  placeholder="Currency..." class="form-control"  size="10"
+              [ngModel]="price"
+              (ngModelChange)="updateWinnings($event)"
+              appCurrencyInputMask >
               <button type="submit" class="btn btn-secondary" (click)="onSearch()" ><span class="icon-search"></span></button>
             </div>
           </form>
