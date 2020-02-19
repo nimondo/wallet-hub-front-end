@@ -16,6 +16,9 @@ import { HeaderComponent } from './header/header.component';
 import { AuthGuardService} from './services/auth-guard.service';
 import { ContactModule } from './general/contact/contact.module';
 import { CustomersModule } from './customers/customers.module';
+import { SearchComponent } from './book-list/search/search.component';
+import { ListComponent } from './book-list/list/list.component';
+import { RateComponent } from './book-list/rate/rate.component';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -27,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'auth/signin', component: SigninComponent },
   { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
   { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
+  // { path: 'books/search', canActivate: [AuthGuardService], component: SearchComponent },
   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
   { path: '', redirectTo: 'books', pathMatch: 'full' },
   { path: '**', redirectTo: 'books' }
@@ -39,7 +43,10 @@ const appRoutes: Routes = [
     BookListComponent,
     SingleBookComponent,
     BookFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent,
+    ListComponent,
+    RateComponent
   ],
   imports: [
     BrowserModule,

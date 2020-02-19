@@ -36,6 +36,9 @@ export class BookListComponent  implements OnInit, OnDestroy {
   onViewBook(id: number) {
     this.router.navigate(['/books', 'view', id]);
   }
+  onRate(count) {
+    alert("Your default rate" +count);
+  }
   
   ngOnDestroy() {
     this.booksSubscription.unsubscribe();
