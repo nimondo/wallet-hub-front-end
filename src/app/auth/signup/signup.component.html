@@ -1,3 +1,36 @@
-<p>
-  signup works!
-</p>
+
+<div class="container marg">
+  <div class="half-post-entry d-block d-lg-flex bg-light">
+    <div class="img-bg" style="background-image: url('assets/images/img_v_1.jpg')"></div>
+    <div class="contents">
+      <span class="caption">Sign Up </span>
+      <h2>Create account for free</h2>
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text"
+                     id="email"
+                     class="form-control"
+                     formControlName="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password"
+                     id="password"
+                     class="form-control"
+                     formControlName="password">
+            </div>
+            <button class="btn btn-primary"
+                    type="submit"
+                    [disabled]="signupForm.invalid">Signup</button>
+          </form>
+          <p class="text-danger">{{ errorMessage }}</p>
+      
+      <div class="post-meta">
+        <!-- <span class="d-block"><a href="">Dave Rogers</a> in <a href="#">Food</a></span> -->
+        <span class="date-read">Already have account<span class="mx-1"></span><a routerLink="auth/signin">Sign In</a></span>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -59,11 +59,17 @@
               <li routerLinkActive="active">
                 <a routerLink="books" class="nav-link text-left">Home</a>
               </li>
-              <li routerLinkActive="active">
+              <li routerLinkActive="active" *ngIf="!isAuth">
                 <a  class="nav-link text-left"  routerLink="auth/signup" >Sign up</a>
               </li>
-              <li routerLinkActive="active">
+              <li routerLinkActive="active" *ngIf="!isAuth">
                 <a routerLink="auth/signin" class="nav-link text-left">Sign in</a>
+              </li>
+              <li>
+                <a (click)="onSignOut()"
+                   style="cursor:pointer"
+                   class="nav-link text-left"
+                   *ngIf="isAuth">Log out</a>
               </li>
             </ul>                                                                                                                                                                                                                                                                                         
           </nav>
