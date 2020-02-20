@@ -1,8 +1,9 @@
 # WalletHubn Test
- Create an angular app that meets the following requirements:
-1) Demonstrates the usage of ngOnChanges, @Ouput() and @Input() | in list add-btn and rate component
-2) Lazy load modules | about module
-3) Demonstrates the usages of route guards | app const route
+ I will create a simple application that lists the books you have at home, in your library. i add a photo of each book. The user must be authenticated to use the application.
+ My angular app meets the following requirements:
+1) Demonstrates the usage of ngOnChanges, @Ouput() and @Input() | `in list add-btn and rate component`
+2) Lazy load modules | `about module`
+3) Demonstrates the usages of route guards | `app const route`
 4) Passes data between pages. Have an input field in one page of which contents is
 displayed in the second page.
 5) Has page transition animations. Here please make 2 examples, one with angularanimations and one that uses just css classes with animations for things like fading in an
@@ -12,7 +13,7 @@ element.
 of angular-forms and ngModel
 8) Demonstrates the usage of ng-content | `add btn`.
 9) Have an input directive that restricts the input to numbers only and auto formats the input
-into currency, ex: $1,234. The field must change its format as user types. | IN HEADER CURRENCY INPUT
+into currency, ex: $1,234. The field must change its format as user types. | `IN HEADER CURRENCY INPUT`
 10) Demonstrates various ways to bind component properties to an associated template
 11) Has unit tests.
 
