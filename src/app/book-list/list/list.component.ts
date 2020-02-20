@@ -14,7 +14,7 @@ export class ListComponent implements OnInit,OnChanges {
     this.doSomething(this.book);
   }
   private doSomething(bk: Book) {
-    alert(bk.title)
+    alert("Page changed !")
   }
 
   ngOnInit(): void {
