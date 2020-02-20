@@ -17,6 +17,11 @@ into currency, ex: $1,234. The field must change its format as user types. | `IN
 10) Demonstrates various ways to bind component properties to an associated template
 11) Has unit tests.
 
+## Requirement
+-ANGULAR
+-NODEJS
+-FIREBASE
+
 
 ## Development server
 
